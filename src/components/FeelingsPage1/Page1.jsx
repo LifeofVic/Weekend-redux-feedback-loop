@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -15,4 +15,34 @@ comments:
 }
 
  */
+
+	const userFeedback = useSelector(store => store.userFeedback);
+	const dispatch = useDispatch();
+	const history = useHistory();
+
+	const handleSubmit = e => {
+		e.preventDefault();
+		console.log('This is what event is: ', e);
+		dispatch({
+			type: 'SET_FEELING',
+			payload: 5,
+		});
+		history.push('/page2');
+	};
+
+	return (
+		<div className='feelings-container'>
+			<h4>{JSON.stringify(userFeedback)}</h4>
+			<form id='feelings-section' onSubmit={handleSubmit}>
+				<h2> How are you feeling today? </h2>
+				<input
+					type='number'
+					// required
+					// value={newUserFeedback}
+					// onChange={e => setFeedback({})}
+				/>
+				<button type='submit'> test</button>
+			</form>
+		</div>
+	);
 }

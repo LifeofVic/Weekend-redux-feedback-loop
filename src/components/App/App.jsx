@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import FeelingsPage from '../FeelingsPage1/Page1';
 
 export default function App() {
 	return (
@@ -12,15 +13,15 @@ export default function App() {
 				<h1 className='App-title'>Feedback!</h1>
 				<h4>Don't forget it!</h4>
 			</header>
-			//!This is what the final product should look like.
-			{/* <Router>
+			{/* This is what the final product should look like. */}
+			<Router>
 				<Route exact path='/page1'>
 					<FeelingsPage />
 				</Route>
 				<Route exact path='/page2'>
-					<UnderstandingPage />
+					{/* <UnderstandingPage /> */}
 				</Route>
-				<Route exact path='/page3'>
+				{/* <Route exact path='/page3'>
 					<SupportPage />
 				</Route>
 				<Route exact path='/page4'>
@@ -31,8 +32,8 @@ export default function App() {
 				</Route>
 				<Route exact path='/admin'>
 					<Admin />
-				</Route>
-			</Router> */}
+				</Route> */}
+			</Router>
 		</div>
 	);
 }
