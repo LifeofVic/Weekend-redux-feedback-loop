@@ -17,16 +17,16 @@ const userFeedback = (
 	action
 ) => {
 	if (action.type === 'SET_FEELING') {
-		return { state, feeling: action.payload };
+		return { ...state, feeling: action.payload };
 	}
 	if (action.type === 'SET_UNDERSTANDING') {
-		return { state, understanding: action.payload };
+		return { ...state, understanding: action.payload };
 	}
 	if (action.type === 'SET_SUPPORT') {
-		return { state, support: action.payload };
+		return { ...state, support: action.payload };
 	}
 	if (action.type === 'SET_COMMENTS') {
-		return { state, comments: action.payload };
+		return { ...state, comments: action.payload };
 	}
 	if (action.type === 'CLEAR_FEEDBACK') {
 		return {
