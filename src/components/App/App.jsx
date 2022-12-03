@@ -26,6 +26,12 @@ export default function App() {
 				<Route exact path='/page4'>
 					<CommentsPage />
 				</Route>
+				<Route exact path='/review'>
+					<ReviewPage />
+				</Route>
+<Route exact path='/admin'>
+					<Admin />
+				</Route>
 			</Router> */}
 		</div>
 	);
