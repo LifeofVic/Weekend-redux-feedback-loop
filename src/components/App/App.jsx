@@ -12,7 +12,7 @@ export default function App() {
 				<h1 className='App-title'>Feedback!</h1>
 				<h4>Don't forget it!</h4>
 			</header>
-			//!This is what the final product should look like.
+			{/* This is what the final product should look like. */}
 			{/* <Router>
 				<Route exact path='/page1'>
 					<FeelingsPage />
