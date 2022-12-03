@@ -4,7 +4,7 @@ import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-function App() {
+export default function App() {
 	return (
 		<div className='App'>
 			<header className='App-header'>
@@ -30,5 +30,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
