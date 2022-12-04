@@ -7,6 +7,7 @@ import UnderstandingPage from '../UnderstandingPage2/Page2';
 import SupportPage from '../SupportPage3/Page3';
 import CommentsPage from '../CommentsPage4/Page4';
 import ReviewPage from '../SubmissionPage5/ReviewPage';
+import Admin from '../Admin/Admin';
 
 export default function App() {
 	return (
@@ -36,9 +37,9 @@ export default function App() {
 				<Route exact path='/review'>
 					<ReviewPage />
 				</Route>
-				{/* <Route exact path='/admin'>
+				<Route exact path='/admin'>
 					<Admin />
-				</Route> */}
+				</Route>
 			</Router>
 		</div>
 	);

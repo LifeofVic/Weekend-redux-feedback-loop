@@ -7,4 +7,51 @@ export default function Admin() {
 -This will create a table and allow the admin to delete any row of the data.
 
  */
+	const [allFeedback, getAllFeedback] = useState([]);
+
+	const fetchFeedback = () => {
+		axios
+			.get('/')
+			.then(response => {
+				console.log('using axios.get to retrieve data from server', response);
+				getAllFeedback(response.data);
+			})
+			.catch(error => {
+				alert('There was an error in receiving data from Database.');
+				console.log(
+					'There was an error in receiving data from Database.',
+					error
+				);
+			});
+	};
+
+	return (
+		<div className='admin-content'>
+			{/* {JSON.stringify(PizzaOrder)} */}
+			<table>
+				<thead>
+					<tr>
+						<th>Feeling</th>
+						<th>Comprehension</th>
+						<th>Support</th>
+						<th>Comments</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					{allFeedback.map(item => {
+						return (
+							<tr key={item.id}>
+								<td>{item.feeling}</td>
+								<td>{item.understanding}</td>
+								<td>{item.support}</td>
+								<td>{item.comments}</td>
+								<button>{item.support}</button>
+							</tr>
+						);
+					})}
+				</tbody>
+			</table>
+		</div>
+	);
 }
