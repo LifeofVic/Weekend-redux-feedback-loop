@@ -19,6 +19,10 @@ comments: //NEXT PAGE
 	const dispatch = useDispatch();
 	const history = useHistory();
 
+	const handleChange = event => {
+		setSupportValue(Number(event.target.value));
+	};
+
 	const handleSubmit = e => {
 		e.preventDefault();
 		console.log('This is what event is: ', e);
@@ -51,11 +55,7 @@ comments: //NEXT PAGE
 			<form id='feelings-section' onSubmit={handleSubmit}>
 				<h2> How well are you being supported? </h2>
 				<h5> 1 - Being the Lowest & 10 - being the Highest</h5>
-				<input
-					type='number'
-					required
-					onChange={e => setSupportValue(Number(...e.target.value))}
-				/>
+				<input type='number' required onChange={handleChange} />
 				<button type='submit'> test</button>
 			</form>
 		</div>

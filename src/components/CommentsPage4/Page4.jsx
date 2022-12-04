@@ -14,4 +14,40 @@ understanding: //*number provided by [UNDERSTANDING PAGE]
 support:  //*number provided by [SUPPORT PAGE]
 comments: //! INSERTED BY THIS FILE.
 */
+
+	const userFeedback = useSelector(store => store.userFeedback);
+	const [commentValue, setCommentValue] = useState('');
+	const dispatch = useDispatch();
+	const history = useHistory();
+
+	const handleChange = event => {
+		setCommentValue(event.target.value);
+	};
+
+	const handleSubmit = e => {
+		e.preventDefault();
+		console.log('This is what event is: ', e);
+		if (!commentValue)
+			dispatch({
+				type: 'SET_COMMENTS',
+				payload: '',
+			});
+		else {
+			dispatch({
+				type: 'SET_COMMENTS',
+				payload: commentValue,
+			});
+		}
+		history.push('/review');
+	};
+	return (
+		<div className='feelings-container'>
+			<h4>{JSON.stringify(userFeedback)}</h4>
+			<form id='feelings-section' onSubmit={handleSubmit}>
+				<h2> Any Comments you want to leave? </h2>
+				<input type='text' onChange={handleChange} />
+				<button type='submit'> test</button>
+			</form>
+		</div>
+	);
 }

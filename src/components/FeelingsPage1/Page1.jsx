@@ -21,6 +21,10 @@ comments:
 	const dispatch = useDispatch();
 	const history = useHistory();
 
+	const handleChange = event => {
+		setFeelingValue(Number(event.target.value));
+	};
+
 	const handleSubmit = e => {
 		e.preventDefault();
 		console.log('This is what event is: ', e);
@@ -36,11 +40,7 @@ comments:
 			<h4>{JSON.stringify(userFeedback)}</h4>
 			<form id='feelings-section' onSubmit={handleSubmit}>
 				<h2> How are you feeling today? </h2>
-				<input
-					type='number'
-					required
-					onChange={e => setFeelingValue(Number(...e.target.value))}
-				/>
+				<input type='number' required onChange={handleChange} />
 				<button type='submit'> test</button>
 			</form>
 		</div>

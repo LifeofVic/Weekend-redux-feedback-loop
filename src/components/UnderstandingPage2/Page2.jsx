@@ -22,6 +22,10 @@ comments:
 	const dispatch = useDispatch();
 	const history = useHistory();
 
+	const handleChange = event => {
+		setUndValue(Number(event.target.value));
+	};
+
 	const handleSubmit = e => {
 		e.preventDefault();
 		console.log('This is what event is: ', e);
@@ -37,11 +41,7 @@ comments:
 			<h4>{JSON.stringify(userFeedback)}</h4>
 			<form id='feelings-section' onSubmit={handleSubmit}>
 				<h2> How well are you understanding the content? </h2>
-				<input
-					type='number'
-					required
-					onChange={e => setUndValue(Number(...e.target.value))}
-				/>
+				<input type='number' required onChange={handleChange} />
 				<button type='submit'> test</button>
 			</form>
 		</div>

@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import FeelingsPage from '../FeelingsPage1/Page1';
 import UnderstandingPage from '../UnderstandingPage2/Page2';
 import SupportPage from '../SupportPage3/Page3';
+import CommentsPage from '../CommentsPage4/Page4';
 
 export default function App() {
 	return (
@@ -26,13 +27,13 @@ export default function App() {
 				<Route exact path='/page3'>
 					<SupportPage />
 				</Route>
-				{/* <Route exact path='/page4'>
+				<Route exact path='/page4'>
 					<CommentsPage />
 				</Route>
 				<Route exact path='/review'>
-					<ReviewPage />
+					{/* <ReviewPage /> */}
 				</Route>
-				<Route exact path='/admin'>
+				{/* <Route exact path='/admin'>
 					<Admin />
 				</Route> */}
 			</Router>
