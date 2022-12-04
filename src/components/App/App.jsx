@@ -7,6 +7,7 @@ import FeelingsPage from '../FeelingsPage1/Page1';
 import UnderstandingPage from '../UnderstandingPage2/Page2';
 import SupportPage from '../SupportPage3/Page3';
 import CommentsPage from '../CommentsPage4/Page4';
+import ReviewPage from '../SubmissionPage5/ReviewPage';
 
 export default function App() {
 	return (
@@ -31,7 +32,7 @@ export default function App() {
 					<CommentsPage />
 				</Route>
 				<Route exact path='/review'>
-					{/* <ReviewPage /> */}
+					<ReviewPage />
 				</Route>
 				{/* <Route exact path='/admin'>
 					<Admin />
