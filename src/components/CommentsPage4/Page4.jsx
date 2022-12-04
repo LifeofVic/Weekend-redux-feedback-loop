@@ -40,7 +40,7 @@ comments: //! INSERTED BY THIS FILE.
 			<form id='feelings-section' onSubmit={handleSubmit}>
 				<h2> Any Comments you want to leave? </h2>
 				<input type='text' onChange={handleChange} />
-				<button type='submit'> test</button>
+				<button type='submit'> Next </button>
 			</form>
 		</div>
 	);
