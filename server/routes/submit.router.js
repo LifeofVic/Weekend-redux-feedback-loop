@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('server/modules/pool.js');
+const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
 	let queryText = 'SELECT * FROM "feedback" ORDER BY "date";';
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 		});
 });
 
-router.post('/', (req, res) => {
+router.post('/submissions', (req, res) => {
 	let newFeedback = req.body;
 	let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1,$2,$3,$4);`;
 	pool

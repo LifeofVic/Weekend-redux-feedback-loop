@@ -1,8 +1,7 @@
 import React from 'react';
-import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import Home from '../Home/Home';
 import FeelingsPage from '../FeelingsPage1/Page1';
 import UnderstandingPage from '../UnderstandingPage2/Page2';
 import SupportPage from '../SupportPage3/Page3';
@@ -19,6 +18,9 @@ export default function App() {
 			</header>
 			{/* This is what the final product should look like. */}
 			<Router>
+				<Route exact path='/'>
+					<Home />
+				</Route>
 				<Route exact path='/page1'>
 					<FeelingsPage />
 				</Route>

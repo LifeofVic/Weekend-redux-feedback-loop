@@ -9,8 +9,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-const submissionRouter = require('../src/routes/submit.router');
-app.use('/review/submission', submissionRouter);
+const submission = require('./routes/submit.router.js');
+app.use('/', submission);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

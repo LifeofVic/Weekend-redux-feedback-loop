@@ -26,27 +26,10 @@ comments: //NEXT PAGE
 	const handleSubmit = e => {
 		e.preventDefault();
 		console.log('This is what event is: ', e);
-		if (supportValue < 0) {
-			dispatch({
-				type: 'SET_SUPPORT',
-				payload: 0,
-			});
-		}
-		if (supportValue > 10) {
-			dispatch({
-				type: 'SET_SUPPORT',
-				payload: 10,
-			});
-		}
-		if (supportValue) {
-			dispatch({
-				type: 'SET_SUPPORT',
-				payload: supportValue,
-			});
-		}
-		if (!supportValue) {
-			alert('Need to provide a input!');
-		}
+		dispatch({
+			type: 'SET_SUPPORT',
+			payload: supportValue,
+		});
 		history.push('/page4');
 	};
 	return (
@@ -56,7 +39,7 @@ comments: //NEXT PAGE
 				<h2> How well are you being supported? </h2>
 				<h5> 1 - Being the Lowest & 10 - being the Highest</h5>
 				<input type='number' required onChange={handleChange} />
-				<button type='submit'> test</button>
+				<button type='submit'> Next </button>
 			</form>
 		</div>
 	);

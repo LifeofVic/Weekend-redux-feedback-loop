@@ -37,11 +37,11 @@ comments:
 
 	return (
 		<div className='feelings-container'>
-			<h4>{JSON.stringify(userFeedback)}</h4>
+			{/* <h4>{JSON.stringify(userFeedback)}</h4> */}
 			<form id='feelings-section' onSubmit={handleSubmit}>
 				<h2> How are you feeling today? </h2>
 				<input type='number' required onChange={handleChange} />
-				<button type='submit'> test</button>
+				<button type='submit'> Next </button>
 			</form>
 		</div>
 	);
