@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
@@ -19,10 +18,14 @@ comments: //*string provided by [COMMENTS PAGE]
 	//This works, now it needs to incorporate the axios.post to send data to server and be able to display it to the admin page.
 	function submitFeedback() {
 		console.log('In the submitFeedback');
-		alert('Feedback was successfully submitted');
-		dispatch({
-			type: 'CLEAR_FEEDBACK',
+		axios.post('/review/submission', userFeedback).then(response => {
+			console.log(response);
+			alert('Feedback was Submitted! 👍');
+			dispatch({
+				type: 'CLEAR_FEEDBACK',
+			});
 		});
+
 		history.push('/page1');
 
 		//create an axios post then need to create a router.post in server to then use sql to input the data correctly onto the database.
