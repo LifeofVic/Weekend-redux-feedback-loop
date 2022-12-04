@@ -24,9 +24,8 @@ h4 {
 
 input {
 width: 120px;
-size: 25px;
 }
 
-button{
+Button{
 cursor: pointer;
 }

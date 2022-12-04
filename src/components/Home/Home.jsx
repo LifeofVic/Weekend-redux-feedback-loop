@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom';
+import { Button } from '@mui/material/';
 
 export default function Home() {
 	/**
@@ -11,13 +12,12 @@ This will be the start of the app where the user has to click on the 'START' but
 		console.log('In the home page');
 		history.push('/page1');
 	};
-
 	return (
 		<div className='home-page'>
 			<h2> Start Survey 📚 </h2>
-			<button type='submit' onClick={handleSubmit}>
+			<Button type='submit' variant='contained' onClick={handleSubmit}>
 				START
-			</button>
+			</Button>
 		</div>
 	);
 }
