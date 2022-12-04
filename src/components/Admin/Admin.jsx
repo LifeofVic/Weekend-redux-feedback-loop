@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react';
 
 export default function Admin() {
@@ -9,12 +9,16 @@ export default function Admin() {
  */
 	const [allFeedback, getAllFeedback] = useState([]);
 
+	useEffect(() => {
+		fetchFeedback();
+	}, []);
+
 	const fetchFeedback = () => {
 		axios
 			.get('/')
 			.then(response => {
 				console.log('using axios.get to retrieve data from server', response);
-				getAllFeedback(response.data);
+				getAllFeedback(response);
 			})
 			.catch(error => {
 				alert('There was an error in receiving data from Database.');
