@@ -14,7 +14,6 @@ understanding: //*number provided by [UNDERSTANDING PAGE]
 support: //! INSERTED BY THIS FILE. 
 comments: //NEXT PAGE
 */
-
 	const userFeedback = useSelector(store => store.userFeedback);
 	const [supportValue, setSupportValue] = useState();
 	const dispatch = useDispatch();
