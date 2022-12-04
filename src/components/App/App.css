@@ -21,3 +21,12 @@
 h4 {
   font-style: italic;
 }
+
+input {
+width: 120px;
+size: 25px;
+}
+
+button{
+cursor: pointer;
+}

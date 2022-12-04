@@ -39,7 +39,7 @@ comments: //! INSERTED BY THIS FILE.
 			{/* <h4>{JSON.stringify(userFeedback)}</h4> */}
 			<form id='feelings-section' onSubmit={handleSubmit}>
 				<h2> Any Comments you want to leave? </h2>
-				<input type='text' onChange={handleChange} />
+				<input type='text' min='1' max='5' onChange={handleChange} />
 				<button type='submit'> Next </button>
 			</form>
 		</div>

@@ -38,7 +38,7 @@ comments:
 			{/* <h4>{JSON.stringify(userFeedback)}</h4> */}
 			<form id='feelings-section' onSubmit={handleSubmit}>
 				<h2> How well are you understanding the content? </h2>
-				<input type='number' required onChange={handleChange} />
+				<input type='number' min='1' max='5' required onChange={handleChange} />
 				<button type='submit'> Next </button>
 			</form>
 		</div>

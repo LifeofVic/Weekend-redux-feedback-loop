@@ -34,11 +34,9 @@ comments: //NEXT PAGE
 	};
 	return (
 		<div className='feelings-container'>
-			<h4>{JSON.stringify(userFeedback)}</h4>
 			<form id='feelings-section' onSubmit={handleSubmit}>
 				<h2> How well are you being supported? </h2>
-				<h5> 1 - Being the Lowest & 10 - being the Highest</h5>
-				<input type='number' required onChange={handleChange} />
+				<input type='number' min='1' max='5' required onChange={handleChange} />
 				<button type='submit'> Next </button>
 			</form>
 		</div>
