@@ -17,6 +17,7 @@ comments:
  */
 
 	const userFeedback = useSelector(store => store.userFeedback);
+	const [feelingValue, setFeelingValue] = useState();
 	const dispatch = useDispatch();
 	const history = useHistory();
 
@@ -25,7 +26,7 @@ comments:
 		console.log('This is what event is: ', e);
 		dispatch({
 			type: 'SET_FEELING',
-			payload: 5,
+			payload: feelingValue,
 		});
 		history.push('/page2');
 	};
@@ -37,9 +38,8 @@ comments:
 				<h2> How are you feeling today? </h2>
 				<input
 					type='number'
-					// required
-					// value={newUserFeedback}
-					// onChange={e => setFeedback({})}
+					required
+					onChange={e => setFeelingValue(Number(...e.target.value))}
 				/>
 				<button type='submit'> test</button>
 			</form>

@@ -16,4 +16,34 @@ comments:
 }
 
  */
+
+	const userFeedback = useSelector(store => store.userFeedback);
+	const [UndValue, setUndValue] = useState();
+	const dispatch = useDispatch();
+	const history = useHistory();
+
+	const handleSubmit = e => {
+		e.preventDefault();
+		console.log('This is what event is: ', e);
+		dispatch({
+			type: 'SET_UNDERSTANDING',
+			payload: UndValue,
+		});
+		history.push('/page3');
+	};
+
+	return (
+		<div className='feelings-container'>
+			<h4>{JSON.stringify(userFeedback)}</h4>
+			<form id='feelings-section' onSubmit={handleSubmit}>
+				<h2> How well are you understanding the content? </h2>
+				<input
+					type='number'
+					required
+					onChange={e => setUndValue(Number(...e.target.value))}
+				/>
+				<button type='submit'> test</button>
+			</form>
+		</div>
+	);
 }
