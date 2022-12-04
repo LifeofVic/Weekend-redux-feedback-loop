@@ -21,11 +21,10 @@ comments: //*string provided by [COMMENTS PAGE]
 		axios.post('/review/submission', userFeedback).then(response => {
 			console.log(response);
 			alert('Feedback was Submitted! 👍');
-			dispatch({
-				type: 'CLEAR_FEEDBACK',
-			});
 		});
-
+		dispatch({
+			type: 'CLEAR_FEEDBACK',
+		});
 		history.push('/page1');
 
 		//create an axios post then need to create a router.post in server to then use sql to input the data correctly onto the database.
